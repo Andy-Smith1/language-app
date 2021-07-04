@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="language-container">
+            <form autocomplete="off" action="">
+                <div class="lang-list" style="width:300px;">
+                    <input id="lang-search" type="text" name="language">
+                </div>
+            </form>
+            <button id="language-button">Search</button>
+            <div class="spoken-in">
+                <h3 id="h3-lang"></h3>
+                <span id="country"></span>
+            </div>
+            <div class="alternatives">
+                <h4 id="h4-lang"></h4>
+                <span id="langs"></span>
+            </div>
+        </div>
+
+        <div class="countries-container">
+            <form autocomplete="off" action="">
+                <div class="countries-list" style="width:300px;">
+                    <input id="country-search" type="text" name="country">
+                </div>
+            </form>
+            <button id="country-button">Search</button>
+            <div class="langs-spoken">
+                <h3></h3>
+                <span id="laguages-spoken"></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
