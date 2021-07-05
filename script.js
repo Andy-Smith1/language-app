@@ -5,14 +5,28 @@ const languageSearchBox = document.querySelector('#lang-search');
 const languageSearchButton = document.querySelector('#language-button');
 const countrySearchBox = document.querySelector('#country-search');
 const countrySearchButton = document.querySelector ('#country-button');
-const spokenInDiv = document.querySelector('.spoken-in');
-const alternativesDiv = document.querySelector('.alternatives')
 let h3Lang = document.querySelector('#h3-lang');
 let h4Lang = document.querySelector('#h4-lang');
 let spanOne = document.querySelector('#country');
 let spanTwo = document.querySelector('#langs');
+let h3Country = document.querySelector('#h3-country');
+let h4Country = document.querySelector('#h4-country');
+let countrySpanOne = document.querySelector('#main-lang');
+let countrySpanTwo = document.querySelector('#alt-langs');
 
 
+
+
+//searches languageList from input. If none found, updates h3
+function findLanguage (lang) {
+    if (lang.language !== languageSearchBox.value.toLowerCase()) {
+        h3Lang.textContent = `No results found for "${languageSearchBox.value}"`
+        spanOne.textContent = ''; //clears rest of text if no language found
+        h4Lang.textContent = '';
+        spanTwo.textContent = '';
+    } 
+    return lang.language === languageSearchBox.value.toLowerCase();
+};
 
 //If language is found, updates text on page with alt languages & countries
 languageSearchButton.addEventListener('click', () => {
@@ -22,26 +36,22 @@ languageSearchButton.addEventListener('click', () => {
     spanOne.textContent = countriesSpoken + '.'
     h4Lang.textContent = `Your client may also speak `;
     spanTwo.textContent = alternativeLang + '.'
+});
 
-    
-})
-
-//searches languageList from input. If none found, updates h3
-function findLanguage (lang) {
-    if (lang.language !== languageSearchBox.value.toLowerCase()) {
-        h3Lang.textContent = `No results found for "${languageSearchBox.value}"`
-        spanOne.textContent = '';
-        h4Lang.textContent = '';
-        spanTwo.textContent = '';
-    } 
-    return lang.language === languageSearchBox.value.toLowerCase();
-}
 
 function findCountry(country) {
-    return country.language === countrySearchBox.value.toLowerCase();
-}
+    return country.country === countrySearchBox.value.toLowerCase();
+};
 
+countrySearchButton.addEventListener('click', () => {
+    let mainLanguage = languageList.find(findCountry).language;
+    let altLanguages = languageList.find(findCountry).alternative;
+    h3Country.textContent = 'The primary language is '
+    countrySpanOne.textContent = mainLanguage + '.';
+    h4Country.textContent = 'Your client may also speak ';
+    countrySpanTwo.textContent = altLanguages + '.';
 
+})
 
 let languageList = [
     {language: 'acateco', country: 'guatemala', alternative: 'spanish'},

@@ -36,4 +36,12 @@ body {
   height: 100vh;
   width: 50vw;
 }
+
+.countries-container h3, .countries-container h4 {
+  display: inline;
+}
+
+.countries-container span {
+  text-transform: capitalize;
+}
 /*# sourceMappingURL=styles.css.map */
