@@ -29,7 +29,7 @@ body {
 }
 
 .language-container h1 {
-  margin: 2em;
+  margin: 1em;
 }
 
 .language-container h3 {
@@ -77,6 +77,22 @@ body {
 
 .language-container .spoken-in {
   padding-bottom: 3em;
+}
+
+.language-container .wiki-link {
+  margin-top: 3em;
+}
+
+.language-container .wiki-link a, .language-container .wiki-link h5 {
+  display: inline;
+  font-weight: 400;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.language-container .wiki-link a {
+  color: #7A64F2;
+  font-weight: 600;
 }
 
 .form-container {
@@ -151,11 +167,9 @@ body {
   }
   .language-container {
     width: 100vw;
-    height: 85vh;
   }
   .countries-container {
     width: 100vw;
-    height: 85vh;
   }
 }
 /*# sourceMappingURL=styles.css.map */

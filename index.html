@@ -8,14 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+ 
     <div class="app-container">
+
         <div class="language-container">
-            <form autocomplete="off" action="">
-                <div class="lang-list" style="width:300px;">
-                    <input id="lang-search" type="text" name="language">
-                </div>
-            </form>
-            <button id="language-button">Search</button>
+            <h1>Alternative Languages</h1>
+            <p>If your client speaks a rare language, it may be difficult to locate an interpreter. Search the required language below for possible alternatives.  </p>
+            <div class="form-container">
+                <form autocomplete="off" action="">
+                    <div class="lang-list">
+                        <input id="lang-search" type="text" name="language" placeholder="Language">
+                    </div>
+                </form>
+                <button id="language-button">Search</button>
+            </div>
             <div class="spoken-in">
                 <h3 id="h3-lang"></h3>
                 <span id="country"></span>
@@ -24,15 +30,22 @@
                 <h4 id="h4-lang"></h4>
                 <span id="langs"></span>
             </div>
+            <div class="wiki-link">
+                <h5 id="learn-more"></h5>
+                <a href="" target="_blank" id="wiki"></a>
+            </div>
         </div>
 
         <div class="countries-container">
-            <form autocomplete="off" action="">
-                <div class="countries-list" style="width:300px;">
-                    <input id="country-search" type="text" name="country">
-                </div>
-            </form>
-            <button id="country-button">Search</button>
+            <h1>Languages by Country</h1>
+            <div class="form-container-countries">
+                <form autocomplete="off" action="">
+                    <div class="countries-list">
+                        <input id="country-search" type="text" name="country">
+                    </div>
+                </form>
+                <button id="country-button">Search</button>
+            </div>
             <div class="langs-spoken">
                 <h3 id="h3-country"></h3>
                 <span id="main-lang"></span>

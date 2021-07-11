@@ -13,6 +13,9 @@ let h3Country = document.querySelector('#h3-country');
 let h4Country = document.querySelector('#h4-country');
 let countrySpanOne = document.querySelector('#main-lang');
 let countrySpanTwo = document.querySelector('#alt-langs');
+let learnMore = document.querySelector('#learn-more');
+let wikiLink = document.querySelector('#wiki');
+
 
 
 
@@ -30,28 +33,46 @@ function findLanguage (lang) {
 
 //If language is found, updates text on page with alt languages & countries
 languageSearchButton.addEventListener('click', () => {
+    if (languageSearchBox.value == '') return; //no action if nothing entered in input field
     let countriesSpoken = languageList.find(findLanguage).country;
     let alternativeLang = languageList.find(findLanguage).alternative;
     h3Lang.textContent = `Widely spoken in `;
     spanOne.textContent = countriesSpoken + '.'
     h4Lang.textContent = `Your client may also speak `;
     spanTwo.textContent = alternativeLang + '.'
+    learnMore.textContent = `To learn more about this language `;
+    wikiLink.textContent = 'click here.'
+    wikiLink.href = `https://en.wikipedia.org/wiki/${languageSearchBox.value}_language`
 });
 
-
+//searches languageList for country from input. If none found, updates h3
 function findCountry(country) {
+    if (country.country !== countrySearchBox.value.toLowerCase()) {
+        h3Country.textContent = `No results found for "${countrySearchBox.value}"`;
+        countrySpanOne.textContent = ''; //clears rest of text if no country found
+        h4Country.textContent = '';
+        countrySpanTwo.textContent = '';
+    }
     return country.country === countrySearchBox.value.toLowerCase();
 };
 
+//if country is found, updates text on page with main language & alternative languages
 countrySearchButton.addEventListener('click', () => {
+    if (countrySearchBox.value == '') return; //no action if nothing entered in input field
     let mainLanguage = languageList.find(findCountry).language;
-    let altLanguages = languageList.find(findCountry).alternative;
+    let altLanguages = languageList.filter(function(lang) {
+        if (lang.country === countrySearchBox.value) {
+            return lang.alternative;
+        }
+    });
+    // let altLanguages = languageList.find(findCountry).alternative;
     h3Country.textContent = 'The primary language is '
     countrySpanOne.textContent = mainLanguage + '.';
     h4Country.textContent = 'Your client may also speak ';
     countrySpanTwo.textContent = altLanguages + '.';
+});
 
-})
+
 
 let languageList = [
     {language: 'acateco', country: 'guatemala', alternative: 'spanish'},
@@ -59,12 +80,12 @@ let languageList = [
     {language: 'afrikaans', country: 'south africa', alternative: 'dutch'},
     {language: 'akan', country: 'ghana', alternative: ['twi', ' lingala', ' french']},
     {language: 'albanian', country: 'albania', alternative: ['greek', ' italian', ' bulgarian', ' serbo-croat']},
-    {language: 'alcholi', country: 'uganda', alternative: 'swahili'},
+    {language: 'acholi', country: 'uganda', alternative: 'swahili'},
     {language: 'amharic', country: 'ethiopia', alternative: ['tigrinya', ' oromo', ' arabic', ' somali']},
     {language: 'arabic', country: 'saudi arabia', alternative: ['kurdish', ' turkish']},
     {language: 'armenian', country: 'armenia', alternative: ['greek', 'albanian']},
     {language: 'asante', country: 'ghana', alternative: ['twi', ' lingala', ' french']},
-    {language: 'assamese', country: 'bangladesh', alternative: 'bengali, hindi or sylheti'},
+    {language: 'assamese', country: 'bangladesh', alternative: ['bengali',' hindi', ' sylheti']},
     {language: '', country: '', alternative: ''},
     {language: '', country: '', alternative: ''},
     {language: '', country: '', alternative: ''},
@@ -72,28 +93,5 @@ let languageList = [
     {language: '', country: '', alternative: ''},
     {language: '', country: '', alternative: ''},
     {language: '', country: '', alternative: ''},
-    
-    
     
 ]
-
-
-//old working code
-
-// languageSearchButton.addEventListener('click', () => {
-//     languageList.forEach((lang) => {
-
-//         if (languageSearchBox.value.toLowerCase() === lang.language) {
-//             h3.textContent = `Widely spoken in `;
-//             spanOne.textContent = lang.country;
-//             h4.textContent = `Your client may also speak `;
-//             spanTwo.textContent = lang.alternative;
-//         } else {
-//             h3.textContent = `No results found for "${lang.language}"`;
-//             spanOne.textContent = '';
-//             h4.textContent = '';
-//             spanTwo.textContent = '';
-            
-//         }
-//     })
-// });

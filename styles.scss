@@ -28,7 +28,7 @@ body {
     padding: 2em;
     
     h1 {
-        margin: 2em;
+        margin: 1em;
     }
 
     h3 {
@@ -70,6 +70,22 @@ body {
     .spoken-in {
         padding-bottom: 3em;
     }
+    .wiki-link {
+        margin-top: 3em;
+        a, h5 {
+            display: inline;
+            font-weight: 400;
+            font-size: 0.75rem;
+            text-decoration: none;
+        }
+        a {
+            color: #7A64F2;
+            font-weight: 600;
+            
+
+        }
+    }
+
 
 }
 
@@ -128,10 +144,10 @@ body {
     }
     .language-container {
         width: 100vw;
-        height:85vh;
+        
     }
     .countries-container {
         width: 100vw;
-        height: 85vh;
+      
     }
 }
