@@ -14,6 +14,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #031239;
 }
 
 .language-container {
@@ -22,14 +23,16 @@ body {
           justify-content: center;
   text-align: center;
   background-color: #031239;
-  height: 100vh;
-  width: 50vw;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: auto;
   color: #F6F9FC;
   padding: 2em;
 }
 
 .language-container h1 {
   margin: 1em;
+  padding-bottom: 1em;
 }
 
 .language-container h3 {
@@ -59,6 +62,7 @@ body {
   padding: 0.5em 1em 0.5em 1em;
   border-radius: 25px;
   border: none;
+  height: 29.33px;
   background-color: #7A64F2;
   color: white;
   cursor: pointer;
@@ -69,6 +73,7 @@ body {
   border-radius: 25px;
   border: 0;
   outline: none;
+  text-transform: capitalize;
 }
 
 .language-container p {
@@ -80,7 +85,7 @@ body {
 }
 
 .language-container .wiki-link {
-  margin-top: 3em;
+  margin-top: 5em;
 }
 
 .language-container .wiki-link a, .language-container .wiki-link h5 {
@@ -96,6 +101,7 @@ body {
 }
 
 .form-container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,73 +109,28 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  padding-bottom: 2em;
+  padding-bottom: 4em;
 }
 
-.countries-container {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
+.form-container .suggestions {
+  background: rgba(255, 255, 255, 0.842);
   color: #031239;
-  height: 100vh;
-  width: 50vw;
-  padding: 2em;
-}
-
-.countries-container h3, .countries-container h4 {
-  display: inline;
-}
-
-.countries-container span {
-  text-transform: capitalize;
-}
-
-.countries-container button {
-  margin-left: 1rem;
-  font-family: roboto;
   font-weight: 500;
-  padding: 0.5em 1em 0.5em 1em;
-  border-radius: 25px;
-  border: none;
-  background-color: #dd317c;
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  width: 184.66px;
+}
+
+.form-container .suggestions div {
+  border: 1px solid #031239;
+  padding: 0.35rem;
+}
+
+.form-container .suggestions div:hover {
+  background-color: #7A64F2;
   color: white;
-  cursor: pointer;
-  -webkit-box-shadow: 0 0 10px #adadad;
-          box-shadow: 0 0 10px #adadad;
-}
-
-.countries-container input {
-  padding: 0.5em 1em 0.5em 1em;
-  border-radius: 25px;
-  border: 0;
-  outline: none;
-  -webkit-box-shadow: 0 0 10px #adadad;
-          box-shadow: 0 0 10px #adadad;
-}
-
-.form-container-countries {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: auto;
-}
-
-@media (max-width: 700px) {
-  .app-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .language-container {
-    width: 100vw;
-  }
-  .countries-container {
-    width: 100vw;
-  }
 }
 /*# sourceMappingURL=styles.css.map */

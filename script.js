@@ -19,7 +19,6 @@ let wikiLink = document.querySelector('#wiki');
 
 
 
-
 //searches languageList from input. If none found, updates h3
 function findLanguage (lang) {
     if (lang.language !== languageSearchBox.value.toLowerCase()) {
@@ -43,35 +42,62 @@ languageSearchButton.addEventListener('click', () => {
     learnMore.textContent = `To learn more about this language `;
     wikiLink.textContent = 'click here.'
     wikiLink.href = `https://en.wikipedia.org/wiki/${languageSearchBox.value}_language`
+    suggestionsList.textContent = '';
 });
+
+
+
+const suggestionsList = document.querySelector('.suggestions');
+
+languageSearchBox.addEventListener('keyup', () => {
+    let input = languageSearchBox.value.toLowerCase();
+    suggestionsList.textContent = '';
+    let suggestions = languageList.filter(function (lang) {
+        return lang.language.startsWith(input);
+    })
+    suggestions.forEach((suggestion) => {
+        let div = document.createElement('div');
+        div.textContent = suggestion.language;
+        suggestionsList.appendChild(div);
+    })
+    if (input === '') {
+        suggestionsList.textContent = '';
+    }
+})
+
+suggestionsList.addEventListener('click', (e) => {
+    languageSearchBox.value = e.target.textContent;
+    suggestionsList.textContent = '';
+})
+
+
 
 //searches languageList for country from input. If none found, updates h3
-function findCountry(country) {
-    if (country.country !== countrySearchBox.value.toLowerCase()) {
-        h3Country.textContent = `No results found for "${countrySearchBox.value}"`;
-        countrySpanOne.textContent = ''; //clears rest of text if no country found
-        h4Country.textContent = '';
-        countrySpanTwo.textContent = '';
-    }
-    return country.country === countrySearchBox.value.toLowerCase();
-};
+// function findCountry(country) {
+//     if (country.country !== countrySearchBox.value.toLowerCase()) {
+//         h3Country.textContent = `No results found for "${countrySearchBox.value}"`;
+//         countrySpanOne.textContent = ''; //clears rest of text if no country found
+//         h4Country.textContent = '';
+//         countrySpanTwo.textContent = '';
+//     }
+//     return country.country === countrySearchBox.value.toLowerCase();
+// };
 
-//if country is found, updates text on page with main language & alternative languages
-countrySearchButton.addEventListener('click', () => {
-    if (countrySearchBox.value == '') return; //no action if nothing entered in input field
-    let mainLanguage = languageList.find(findCountry).language;
-    let altLanguages = languageList.filter(function(lang) {
-        if (lang.country === countrySearchBox.value) {
-            return lang.alternative;
-        }
-    });
-    // let altLanguages = languageList.find(findCountry).alternative;
-    h3Country.textContent = 'The primary language is '
-    countrySpanOne.textContent = mainLanguage + '.';
-    h4Country.textContent = 'Your client may also speak ';
-    countrySpanTwo.textContent = altLanguages + '.';
-});
-
+// //if country is found, updates text on page with main language & alternative languages
+// countrySearchButton.addEventListener('click', () => {
+//     if (countrySearchBox.value == '') return; //no action if nothing entered in input field
+//     let mainLanguage = languageList.find(findCountry).language;
+//     let altLanguages = languageList.filter(function(lang) {
+//         if (lang.country === countrySearchBox.value) {
+//             return lang.alternative;
+//         }
+//     });
+//     // let altLanguages = languageList.find(findCountry).alternative;
+//     h3Country.textContent = 'The primary language is '
+//     countrySpanOne.textContent = mainLanguage + '.';
+//     h4Country.textContent = 'Your client may also speak ';
+//     countrySpanTwo.textContent = altLanguages + '.';
+// });
 
 
 let languageList = [
