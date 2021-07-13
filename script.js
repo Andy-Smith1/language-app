@@ -35,7 +35,7 @@ languageSearchButton.addEventListener('click', () => {
     if (languageSearchBox.value == '') return; //no action if nothing entered in input field
     let countriesSpoken = languageList.find(findLanguage).country;
     let alternativeLang = languageList.find(findLanguage).alternative;
-    h3Lang.textContent = `Widely spoken in `;
+    h3Lang.textContent = `Most widely spoken in `;
     spanOne.textContent = countriesSpoken + '.'
     h4Lang.textContent = `Your client may also speak `;
     spanTwo.textContent = alternativeLang + '.'
@@ -44,6 +44,7 @@ languageSearchButton.addEventListener('click', () => {
     wikiLink.href = `https://en.wikipedia.org/wiki/${languageSearchBox.value}_language`
     suggestionsList.textContent = '';
 });
+
 
 
 
@@ -69,6 +70,7 @@ suggestionsList.addEventListener('click', (e) => {
     languageSearchBox.value = e.target.textContent;
     suggestionsList.textContent = '';
 })
+
 
 
 
@@ -109,15 +111,78 @@ let languageList = [
     {language: 'acholi', country: 'uganda', alternative: 'swahili'},
     {language: 'amharic', country: 'ethiopia', alternative: ['tigrinya', ' oromo', ' arabic', ' somali']},
     {language: 'arabic', country: 'saudi arabia', alternative: ['kurdish', ' turkish']},
-    {language: 'armenian', country: 'armenia', alternative: ['greek', 'albanian']},
+    {language: 'armenian', country: 'armenia', alternative: ['greek', ' albanian']},
     {language: 'asante', country: 'ghana', alternative: ['twi', ' lingala', ' french']},
     {language: 'assamese', country: 'bangladesh', alternative: ['bengali',' hindi', ' sylheti']},
+    {language: 'assyrian', country: 'syria', alternative: 'arabic'},
+    {language: 'azerbaijani', country: 'azerbaijan', alternative: ['russian', ' turkish', ' farsi']},
+    {language: 'bahasa indonesia', country: 'indonesia', alternative: ['malay', ' portuguese', ' tetun']},
+    {language: 'bambara', country: 'mali', alternative: ['mandinka', ' french']},
+    {language: 'basque', country: 'spain', alternative: ['spanish', ' french']},
+    {language: 'belarusian', country: 'belarus', alternative: ['russian', ' lithuanian', ' latvian', ' polish']},
+    {language: 'bengali', country: 'bangladesh', alternative: ['hindi', ' sylheti']},
+    {language: 'berber', country: 'morocco', alternative: ['arabic', ' french']},
+    {language: 'bosnian', country: 'bosnia', alternative: ['serbo-croat', ' albanian']},
+    {language: 'bravanese', country: 'somalia', alternative: ['somali', ' arabic']},
+    {language: 'bulgarian', country: 'bulgaria', alternative: ['greek', 'albanian']},
+    {language: 'burmese', country: 'burma', alternative: ['nepali', ' hindi']},
+    {language: 'cambodian (khmer)', country: 'cambodia', alternative: ['vietnamese', ' thai']},
+    {language: 'cantonese', country: 'china', alternative: 'mandarin'},
+    {language: 'cape verdean creole', country: 'cape verde', alternative: ['portuguese', ' haitain (creole)', ' french']},
+    {language: 'catalan', country: 'spain', alternative: 'spanish'},
+    {language: 'cebuano', country: 'philippines', alternative: ['tagalog', ' bahasa indonesia']},
+    {language: 'chaldean', country: 'iraq', alternative: ['arabic', ' kurdish']},
+    {language: 'chaozhou', country: 'china', alternative: ['mandarin', ' cantonese']},
+    {language: 'creole (haitian)', country: 'haiti', alternative: 'french'},
+    {language: 'czech', country: 'czech republic', alternative: 'slovak'},
+    {language: 'danish', country: 'denmark', alternative: ['swedish', ' german']},
+    {language: 'dinka', country: 'south sudan', alternative: ['mandinka', ' french']},
+    {language: 'dutch', country: 'the netherlands', alternative: ['german', 'french']},
+    {language: 'estonian', country: 'estonia', alternative: 'russia'},
+    {language: 'ewe', country: 'ghana', alternative: 'twi'},
+    {language: 'fanti', country: 'ghana', alternative: ['twi', ' lingala', ' french']},
+    {language: 'farsi (afghan)', country: 'afghanistan', alternative: ['arabic', ' kurdish', ' pashto']},
+    {language: 'farsi (persian)', country: 'iran', alternative: ['arabic', ' kurdish', ' pashto']},
+    {language: 'finnish', country: 'finland', alternative: ['hungarian', ' german']},
+    {language: 'flemish', country: 'belgium', alternative: ['french', ' german']},
+    {language: 'french', country: 'france', alternative: ['german', ' dutch']},
+    {language: 'fujianese', country: 'china', alternative: ['mandarin', ' cantonese']},
+    {language: 'fulani', country: 'nigeria', alternative: 'french'},
+    {language: 'fuzhou', country: 'china', alternative: ['mandarin', ' cantonese']},
+    {language: 'ga', country: 'ghana', alternative: ['french', ' lingala', ' twi']},
+    {language: 'garre', country: 'somalia', alternative: 'somali'},
+    {language: 'georgian', country: 'georgia', alternative: 'russian'},
+    {language: 'german', country: 'germany', alternative: ['dutch', ' french']},
+    {language: 'greek', country: 'greece', alternative: ['bulgarian', ' turkish', ' italian']},
+    {language: 'gujarati', country: 'india', alternative: ['hindi', ' urdu', ' marathi']},
+    {language: 'hakka', country: 'china', alternative: ['cantonese', ' mandarin']},
+    {language: 'hausa', country: 'nigeria', alternative: 'yoruba'},
+    {language: 'hebrew', country: 'israel', alternative: ['yiddish', ' arabic']},
+    {language: 'hindi', country: 'india', alternative: ['urdu', ' punjabi']},
+    {language: 'hmong', country: 'china', alternative: ['mandarin', ' cantonese', ' vietnamese']},
+    {language: 'hungarian', country: 'hungary', alternative: ['czech', ' slovak']},
+    {language: 'igbo', country: 'nigeria', alternative: 'french'},
+    {language: 'ilocano', country: 'philippines', alternative: ['tagalog', ' bahasa indonesia', ' malay']},
+    {language: 'italian', country: 'italy', alternative: ['spanish', ' portuguese']},
+    {language: 'japanese', country: 'japan', alternative: 'korean'},
+    {language: 'jula', country: 'burkina faso', alternative: 'mandinka'},
+    {language: 'kachchi', country: 'india', alternative: ['gujarati', ' hindi', ' urdu']},
+    {language: 'kanjobal', country: 'guatemala', alternative: 'spanish'},
+    {language: 'karen', country: 'burma', alternative: ['burmese', ' hindi', ' nepali']},
+    {language: 'karenni', country: 'burma', alternative: ['burmese', ' hindi', ' nepali']},
+    {language: 'kashmiri', country: 'india', alternative: ['hindi', ' urdu']},
+    {language: 'kazakh', country: 'kazakhstan', alternative: ['pashto', ' russian', ' arabic']},
+    {language: 'kirghiz', country: 'kyrgyzstan', alternative: 'turkish'},
+    {language: 'kirundi', country: 'burundi', alternative: 'swahili'},
+    {language: 'kongo', country: 'democratic republic of the congo', alternative: ['swahili', ' arabic']},
+    {language: 'korean', country: 'south korea', alternative: 'japanese'},
+    {language: 'kunama', country: 'eritrea', alternative: ['tigrinya', ' amharic']},
+    {language: 'kurdish (kurmanji)', country: 'syria', alternative: ['sorani', ' arabic', ' turkish', ' farsi']},
+    {language: 'kurdish (sorani)', country: 'iraq', alternative: ['turkish', ' arabic']},
     {language: '', country: '', alternative: ''},
     {language: '', country: '', alternative: ''},
-    {language: '', country: '', alternative: ''},
-    {language: '', country: '', alternative: ''},
-    {language: '', country: '', alternative: ''},
-    {language: '', country: '', alternative: ''},
-    {language: '', country: '', alternative: ''},
-    
+
 ]
+
+
+// {language: '', country: '', alternative: ''},
