@@ -84,6 +84,7 @@ body {
 
 .language-container p {
   padding: 2em;
+  max-width: 70ch;
 }
 
 .language-container .spoken-in {
