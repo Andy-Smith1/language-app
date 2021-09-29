@@ -188,7 +188,7 @@ let languageList = [
     {language: 'macedonian', country: 'macedonia', alternative: ['serbo-croat', ' bosnian', ' russian']},
     {language: 'maay maay', country: 'somalia', alternative: ['somali', ' arabic']},
     {language: 'malay', country: 'malaysia', alternative: 'indonesian'},
-    {language: 'malayalam', country: 'india', alternative: ['india', ' sinhala']},
+    {language: 'malayalam', country: 'india', alternative: ['hindi', ' sinhala']},
     {language: 'maltese', country: 'malta', alternative: 'spanish'},
     {language: 'mandarin', country: 'china', alternative: 'cantonese'},
     {language: 'mandinka', country: 'mali', alternative: ['french', ' krio']},
